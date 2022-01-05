@@ -1,17 +1,16 @@
+import 'package:coaching_system/common/toast_helper.dart';
 import 'package:flutter/material.dart';
 
 class CourseCard extends StatefulWidget {
   CourseCard({
     required this.courseTitle,
     required this.courseSubtitle,
-    // required this.add2list,
-    // required this.enrolled,
+    required this.enrollTap,
   });
 
   Text courseTitle;
   Text courseSubtitle;
-  // String add2list;
-  // String enrolled;
+  final GestureTapCallback enrollTap;
 
   @override
   State<CourseCard> createState() => _CourseCardState();
@@ -25,7 +24,7 @@ class _CourseCardState extends State<CourseCard> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
-            leading: Icon(Icons.book_outlined),
+            leading: const Icon(Icons.book_outlined),
             title: widget.courseTitle,
             subtitle: widget.courseSubtitle,
           ),
@@ -33,18 +32,14 @@ class _CourseCardState extends State<CourseCard> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               TextButton(
-                // child: Text(widget.add2list),
-                child: Text('ADD TO LIST'),
-                onPressed: () {
-                  // widget.add2list = 'ADDED TO LIST';
-                },
-              ),
+                  child: Text('ADD TO LIST'),
+                  onPressed: () {
+                    MyAlertDialog(context, "Added to list.");
+                  }),
               const SizedBox(width: 8),
               TextButton(
-                child: Text('ENROLL'),
-                onPressed: () {
-                  // widget.add2list = 'ADDED TO LIST';
-                },
+                child: const Text('ENROLL'),
+                onPressed: widget.enrollTap,
               ),
               const SizedBox(width: 8),
             ],
