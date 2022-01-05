@@ -10,6 +10,8 @@ class Payment extends StatefulWidget {
 }
 
 class _PaymentState extends State<Payment> {
+  final _formKey = GlobalKey<FormState>();
+
   final _conCardNumber = TextEditingController();
   final _conExpire = TextEditingController();
   final _conCVV = TextEditingController();
@@ -22,13 +24,14 @@ class _PaymentState extends State<Payment> {
         title: const Text('Payment'),
       ),
       body: Column(
+        key: _formKey,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'Enter your card details to pay for the course.',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           MyTextFormField(
@@ -37,7 +40,7 @@ class _PaymentState extends State<Payment> {
             myicon: Icons.credit_card,
             controller: _conCardNumber,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           MyTextFormField(
@@ -46,7 +49,7 @@ class _PaymentState extends State<Payment> {
             myicon: Icons.date_range_outlined,
             controller: _conExpire,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           MyTextFormField(
@@ -55,7 +58,7 @@ class _PaymentState extends State<Payment> {
             myicon: Icons.code,
             controller: _conCVV,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           MyTextFormField(
@@ -64,7 +67,7 @@ class _PaymentState extends State<Payment> {
             myicon: Icons.money_outlined,
             controller: _conAmount,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10.0,
           ),
           Container(

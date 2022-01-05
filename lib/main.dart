@@ -1,3 +1,4 @@
+import 'package:coaching_system/screens/welcome.dart';
 import 'package:flutter/material.dart';
 import 'screens/login_form.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const LoginForm(),
+      home: WelcomeScreen(),
     );
   }
 }
