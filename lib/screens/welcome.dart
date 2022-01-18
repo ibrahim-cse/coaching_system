@@ -70,7 +70,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               },
               child: const Text('Login as teacher',
                   style: TextStyle(fontSize: 20.0)),
-            )
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => LoginForm()),
+                );
+              },
+              child: const Text('Login as Guardian',
+                  style: TextStyle(fontSize: 18.5)),
+            ),
           ],
         ),
       ),

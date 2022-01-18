@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:coaching_system/common/course_card.dart';
 import 'package:coaching_system/common/logout_promt.dart';
 import 'package:coaching_system/screens/payment.dart';
@@ -35,8 +36,8 @@ class _CoursesState extends State<Courses> {
           Column(
             children: [
               CourseCard(
-                courseTitle: const Text('Flutter Development'),
-                courseSubtitle: const Text('Flutter tutorials for beginners.'),
+                courseTitle: const Text('Higher Math'),
+                courseSubtitle: const Text('Higher math A-Z for beginners.'),
                 enrollTap: () {
                   Navigator.push(
                       context, MaterialPageRoute(builder: (_) => Payment()));

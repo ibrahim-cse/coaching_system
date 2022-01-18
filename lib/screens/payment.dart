@@ -45,7 +45,7 @@ class _PaymentState extends State<Payment> {
           MyAlertDialog(context, "Payment successful");
 
           Navigator.push(
-              context, MaterialPageRoute(builder: (_) => Lectures()));
+              context, MaterialPageRoute(builder: (_) => CourseContents()));
         }).catchError((error) {
           print(error);
           MyAlertDialog(context, "Data Saving Failed");
